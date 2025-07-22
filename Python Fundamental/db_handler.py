@@ -9,7 +9,7 @@ def get_connection():
         connection = mysql.connector.connect(
             host = 'ich-edit.edu.itcareerhub.de',
             username = 'ich1',
-            password = 'ich1_password_ilovedbs',
+            password = '*****************',
             database = '170624_Kazakevych'
         )
         return connection
