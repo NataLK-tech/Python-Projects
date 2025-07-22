@@ -1,1 +1,6 @@
-my first project
+This is my first student project in Python — Movie Search Application. 
+It consists of three files:
+
+db_handler.py — handles the connection to a MySQL database
+query_handler.py — contains functions for filtering and searching movies by keyword, year, genre, or a combination of these parameters, as well as tracking popular queries
+main.py — a console-based Python application for interactive movie search from a MySQL database, featuring advanced filtering and query analytics
