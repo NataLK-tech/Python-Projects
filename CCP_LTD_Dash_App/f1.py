@@ -135,7 +135,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
         ),
         plot_bgcolor="white",
         showlegend=True,
-        legend_title="Metrics by Company"
+        legend_title="Companies:"
     )
 
     fig.update_yaxes(
@@ -166,6 +166,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
     )
 
     return fig
+
 
 
 
