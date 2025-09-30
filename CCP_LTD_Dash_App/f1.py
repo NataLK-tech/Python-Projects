@@ -21,7 +21,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
     y_range = [max(0, min_val - padding), max_val + padding]
 
     fig = sp.make_subplots(specs=[[{"secondary_y": True}]],
-                          figure=go.Figure(layout=dict(width=1400, height=600)))
+                          figure=go.Figure(layout=dict(width=1350, height=600)))
 
     companies = df['Symbol'].unique()
 
@@ -166,6 +166,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
     )
 
     return fig
+
 
 
 
