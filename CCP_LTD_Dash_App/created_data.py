@@ -31,7 +31,7 @@ def download_and_extract_zip(url, output_dir="."):
         raise
 
 
-url = "https://raw.githubusercontent.com/ronihogri/financial-doc-reader/main/steps/step3_extract_by_concept/results.zip"
+url = url
 sqlite_path = download_and_extract_zip(url)
 
 def create_merged_dataframe(sqlite_path):
@@ -83,5 +83,6 @@ result_df['NormalizedQuarter'] = pd.to_datetime(result_df['NormalizedQuarter'], 
 result_df['Ratio_CCP_LTD'] = round(result_df['CCP'] / result_df['LTD'], 4)
 
 # print(result_df.head())
+
 
 
