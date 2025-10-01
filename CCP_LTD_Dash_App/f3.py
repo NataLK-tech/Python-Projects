@@ -1,10 +1,9 @@
-from created_data import result_df
+#from preparation_data import result_df
 
 import numpy as np
 import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
-import plotly.subplots as sp
+
 
 
 def create_fig_3(df):
@@ -36,9 +35,9 @@ def create_fig_3(df):
         colorscale=colorscale,
         zmin=0,
         zmax=max_val,
-        text=pivot_df.values,
-        texttemplate="%{text:.2f}",
-        textfont={"size": 12},
+        # ext=pivot_df.values,
+        # texttemplate="%{text:.2f}",
+        # textfont={"size": 12},
         hovertemplate="Company: %{y}<br>Quarter: %{x}<br>Ratio CCP/LTD: %{z:.4f}<extra></extra>",
     ))
 
@@ -59,8 +58,10 @@ def create_fig_3(df):
             showgrid=False
         ),
         plot_bgcolor="white",
-        width=1200,
-        height=600
+        width=650,
+        height=400
     )
 
     return fig
+
+
