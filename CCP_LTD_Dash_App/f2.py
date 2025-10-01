@@ -1,10 +1,8 @@
 #from preparation_data import result_df
 
-import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import plotly.subplots as sp
 
 
 def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
@@ -114,3 +112,4 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
     )
 
     return fig_2
+
