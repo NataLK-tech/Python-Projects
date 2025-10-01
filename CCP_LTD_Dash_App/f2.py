@@ -1,4 +1,4 @@
-from created_data import result_df
+#from preparation_data import result_df
 
 import numpy as np
 import pandas as pd
@@ -23,7 +23,7 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
     padding = (max_val - min_val) * 0.1 if max_val > min_val else 0.1
     y_range = [0, max_val + padding]
 
-    fig_2 = go.Figure(layout=dict(width=1200, height=600))
+    fig_2 = go.Figure(layout=dict(width=650, height=400))
 
     x_min = unique_quarters.iloc[0]
     x_max = unique_quarters.iloc[-1]
@@ -77,7 +77,7 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
                 ),
                 hovertext=hovertext,
                 hovertemplate="%{hovertext}<extra></extra>",
-                showlegend=True
+                showlegend=False
             )
         )
 
@@ -109,11 +109,8 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
             zeroline=False
         ),
         plot_bgcolor="white",
-        showlegend=True,
-        legend_title="Companies"
+        #showlegend=True,
+        #legend_title="Companies"
     )
 
     return fig_2
-
-
-create_fig_2(result_df)
