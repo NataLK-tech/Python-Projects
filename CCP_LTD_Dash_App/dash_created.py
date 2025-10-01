@@ -4,7 +4,7 @@ from dash import Dash, dcc, html, Input, Output
 import plotly.graph_objects as go
 import os
 
-from main2 import result_df
+from preparation_data import result_df
 from f1 import create_fig_1
 from f2 import create_fig_2
 from f3 import create_fig_3
@@ -19,15 +19,15 @@ max_year = int(result_df['year'].max())
 # created Dash
 app = Dash(__name__)
 
-app.layout = html.Div([    
-    html.Div([        
+app.layout = html.Div([
+    html.Div([
         html.Div([
             html.H1("Trends of CCP & LTD", style={
                 'margin': '0',
                 'fontSize': '46px'
             })
         ], style={'width': '60%', 'display': 'flex', 'alignItems': 'center'}),
-      
+
 
         html.Div([
             html.Label("Choose a company:", style={'fontWeight': 'bold'}),
@@ -39,7 +39,7 @@ app.layout = html.Div([
                 placeholder="Select one or more companies"
             )
         ], style={'width': '20%', 'marginLeft': '20px', 'marginRight': '20px'}),
-        
+
         html.Div([
             html.Label("Select a range of years:", style={'fontWeight': 'bold'}),
             dcc.RangeSlider(
@@ -60,9 +60,9 @@ app.layout = html.Div([
         'maxWidth': '1300px',
         'margin': '0 auto'
     }),
-    
+
     dcc.Graph(id='graph-1', style={'margin': '20px'}),
-    
+
     html.Div([
         dcc.Graph(id='graph-2', style={'marginRight': '10px', 'width': '645px'}),
         dcc.Graph(id='graph-3', style={'marginLeft': '10px', 'width': '645px'})
@@ -107,7 +107,7 @@ def filter_companies(selected):
      Input('year-slider', 'value')]
 )
 def update_graphs(selected_companies, selected_year_range):
-    if not selected_companies:        
+    if not selected_companies:
         return go.Figure(), go.Figure(), go.Figure()
 
     if 'ALL' in selected_companies:
@@ -135,3 +135,4 @@ if __name__ == '__main__':
         app.run(debug=True, host='0.0.0.0', port=port)
     else:
         app.run(debug=True, port=8051)
+
