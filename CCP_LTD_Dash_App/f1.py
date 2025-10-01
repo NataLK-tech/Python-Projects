@@ -1,6 +1,5 @@
-from created_data import result_df
+#from preparation_data import result_df
 
-import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -21,7 +20,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
     y_range = [max(0, min_val - padding), max_val + padding]
 
     fig = sp.make_subplots(specs=[[{"secondary_y": True}]],
-                          figure=go.Figure(layout=dict(width=1300, height=600)))
+                          figure=go.Figure(layout=dict(width=1300, height=400)))
 
     companies = df['Symbol'].unique()
 
