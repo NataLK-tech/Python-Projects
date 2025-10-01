@@ -1,12 +1,10 @@
 # pip install dash
 
-import dash
 from dash import Dash, dcc, html, Input, Output
-import pandas as pd
 import plotly.graph_objects as go
 import os
 
-from created_data import result_df
+from main2 import result_df
 from f1 import create_fig_1
 from f2 import create_fig_2
 from f3 import create_fig_3
@@ -21,11 +19,16 @@ max_year = int(result_df['year'].max())
 # created Dash
 app = Dash(__name__)
 
-app.layout = html.Div([
-    html.H1("CCP / LTD Dashboard", style={'textAlign': 'left', 'margin': '20px'}),
+app.layout = html.Div([    
+    html.Div([        
+        html.Div([
+            html.H1("Trends of CCP & LTD", style={
+                'margin': '0',
+                'fontSize': '46px'
+            })
+        ], style={'width': '60%', 'display': 'flex', 'alignItems': 'center'}),
+      
 
-    html.Div([
-        # Фильтр компаний
         html.Div([
             html.Label("Choose a company:", style={'fontWeight': 'bold'}),
             dcc.Dropdown(
@@ -35,8 +38,8 @@ app.layout = html.Div([
                 multi=True,
                 placeholder="Select one or more companies"
             )
-        ], style={'width': '50%', 'marginRight': '20px'}),
-
+        ], style={'width': '20%', 'marginLeft': '20px', 'marginRight': '20px'}),
+        
         html.Div([
             html.Label("Select a range of years:", style={'fontWeight': 'bold'}),
             dcc.RangeSlider(
@@ -47,27 +50,66 @@ app.layout = html.Div([
                 value=[min_year, max_year],
                 marks={str(y): str(y) for y in range(min_year, max_year + 1)}
             )
-        ], style={'width': '50%'})
+        ], style={'width': '20%'})
     ], style={
         'display': 'flex',
         'flexDirection': 'row',
-        'margin': '20px'
+        'alignItems': 'center',
+        'justifyContent': 'space-between',
+        'padding': '20px',
+        'maxWidth': '1300px',
+        'margin': '0 auto'
     }),
-
+    
     dcc.Graph(id='graph-1', style={'margin': '20px'}),
-    dcc.Graph(id='graph-2', style={'margin': '20px'}),
-    dcc.Graph(id='graph-3', style={'margin': '20px'})
+    
+    html.Div([
+        dcc.Graph(id='graph-2', style={'marginRight': '10px', 'width': '645px'}),
+        dcc.Graph(id='graph-3', style={'marginLeft': '10px', 'width': '645px'})
+    ], style={
+        'display': 'flex',
+        'flexDirection': 'row',
+        'justifyContent': 'center',
+        #'margin': '0 20px 20px 20px',
+        'maxWidth': '1300px',
+        'margin': '0 auto'
+    })
 ])
+
+@app.callback(
+    Output('company-dropdown', 'options'),
+    Output('company-dropdown', 'value'),
+    Input('company-dropdown', 'value'),
+    prevent_initial_call=True
+)
+def filter_companies(selected):
+    if not selected:
+        return (
+            [{'label': 'All companies', 'value': 'ALL'}] + [{'label': c, 'value': c} for c in companies],
+            []
+        )
+    if 'ALL' in selected:
+        return (
+            [{'label': 'All companies', 'value': 'ALL'}],
+            ['ALL']
+        )
+    else:
+        return (
+            [{'label': 'All companies', 'value': 'ALL'}] + [{'label': c, 'value': c} for c in companies],
+            [v for v in selected if v != 'ALL']
+        )
 
 @app.callback(
     [Output('graph-1', 'figure'),
      Output('graph-2', 'figure'),
      Output('graph-3', 'figure')],
-     [Input('company-dropdown', 'value'),
+    [Input('company-dropdown', 'value'),
      Input('year-slider', 'value')]
 )
-
 def update_graphs(selected_companies, selected_year_range):
+    if not selected_companies:        
+        return go.Figure(), go.Figure(), go.Figure()
+
     if 'ALL' in selected_companies:
         filtered_companies = companies
     else:
