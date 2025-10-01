@@ -2,7 +2,6 @@
 
 import io
 import os
-import numpy as np
 import pandas as pd
 import sqlite3
 import zipfile
@@ -83,3 +82,4 @@ result_df['NormalizedQuarter'] = pd.to_datetime(result_df['NormalizedQuarter'], 
 result_df['Ratio_CCP_LTD'] = round(result_df['CCP'] / result_df['LTD'], 4)
 
 # print(result_df.head())
+
