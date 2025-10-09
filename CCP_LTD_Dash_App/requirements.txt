@@ -2,4 +2,7 @@ dash
 pandas
 numpy
 plotly
+
 requests
+
+pymongo
