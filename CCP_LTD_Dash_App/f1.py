@@ -138,7 +138,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
     )
 
     fig.update_yaxes(
-        title_text="CCP, $ M",
+        title_text="Cash and Cash Position, $ M",
         title_font=dict(size=14, color="black", weight="bold"),
         showgrid=False,
         range=y_range,
@@ -151,7 +151,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
         secondary_y=False
     )
     fig.update_yaxes(
-        title_text="LTD, $ M",
+        title_text="Long-Term Debt, $ M",
         title_font=dict(size=14, color="black", weight="bold"),
         showgrid=False,
         range=y_range,
@@ -165,6 +165,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
     )
 
     return fig
+
 
 
 
