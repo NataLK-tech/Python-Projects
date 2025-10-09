@@ -4,5 +4,6 @@ numpy
 plotly
 
 requests
+supabase
+# pymongo
 
-pymongo
