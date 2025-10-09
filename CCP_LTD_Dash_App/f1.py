@@ -24,9 +24,24 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
 
     companies = df['Symbol'].unique()
 
+    symbol_colors = {
+        'AAPL': '#1f77b4',
+        'AMGN': '#ff7f0e',
+        'AMZN': '#2ca02c',
+        'BBWI': '#d62728',
+        'BMY': '#9467bd',
+        'CNC': '#8c564b',
+        'COP': '#e377c2',
+        'GILD': '#7f7f7f',
+        'HSIC': '#bcbd22',
+        'KO': '#17becf',
+        'TMO': '#aec7e8',
+        'UPS': '#ffbb78'
+    }
+
     for i, company in enumerate(companies):
         company_data = df[df['Symbol'] == company].sort_values('NormalizedQuarter')
-        color = px.colors.qualitative.Plotly[i % len(px.colors.qualitative.Plotly)]
+        color = symbol_colors.get(company, '#000000')
 
         hovertext_ccp = [
             f"Company: {company}<br>Quarter: {q.to_period('Q').strftime('%Y Q%q')}<br>CCP: $ {val:.0f} M"
@@ -54,7 +69,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
 
     for i, company in enumerate(companies):
         company_data = df[df['Symbol'] == company].sort_values('NormalizedQuarter')
-        color = px.colors.qualitative.Plotly[i % len(px.colors.qualitative.Plotly)]
+        color = symbol_colors.get(company, '#000000')
 
         hovertext_ltd = [
             f"Company: {company}<br>Quarter: {q.to_period('Q').strftime('%Y Q%q')}<br>LTD: $ {val:.0f} M"
@@ -165,6 +180,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
     )
 
     return fig
+
 
 
 
