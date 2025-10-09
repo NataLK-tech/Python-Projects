@@ -47,13 +47,28 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
 
     companies = filtered_df['Symbol'].unique()
 
+    symbol_colors = {
+        'AAPL': '#1f77b4',
+        'AMGN': '#ff7f0e',
+        'AMZN': '#2ca02c',
+        'BBWI': '#d62728',
+        'BMY': '#9467bd',
+        'CNC': '#8c564b',
+        'COP': '#e377c2',
+        'GILD': '#7f7f7f',
+        'HSIC': '#bcbd22',
+        'KO': '#17becf',
+        'TMO': '#aec7e8',
+        'UPS': '#ffbb78'
+    }
+
     for i, company in enumerate(companies):
         company_data = filtered_df[filtered_df['Symbol'] == company]
         if company_data.empty:
             continue
 
         company_data = company_data.sort_values('NormalizedQuarter')
-        color = px.colors.qualitative.Plotly[i % len(px.colors.qualitative.Plotly)]
+        color = symbol_colors.get(company, '#000000')
 
         hovertext = [
             f"Company: {company}<br>Quarter: {q.to_period('Q').strftime('%Y Q%q')}<br>Ratio CCP/LTD: {val:.4f}"
@@ -112,4 +127,5 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
     )
 
     return fig_2
+
 
