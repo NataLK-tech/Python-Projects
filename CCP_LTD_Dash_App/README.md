@@ -20,7 +20,7 @@ The project demonstrates the full development cycle of an interactive dashboard:
 
 **Database/Storage** - *Supabase (JSON Storage)*
 
-**Raw Data Source** - from [`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py).
+**Raw Data Source** - from another GitHub page ([`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py)).
 
 
 ## Features/Functionality
@@ -88,7 +88,9 @@ The second visualization [`visualization_2`](./image_fig_2.ccp_ltd_ratio_chart.p
 
 The third visualization [`visualization_3`](./image_fig_3.Ratio_CCP_LTD%20Heatmap.png) is a heatmap of the liquidity ratio. It has four main color ranges: from 0 to 0.2 (red) – critical value, from 0.2 to 0.5 (yellow) – moderate, from 0.5 to 1 (blue) – acceptable, and above 1 (green) – excellent. The intensity of each color also varies, which improves the visual perception of the results.
 
-Comments: First, keep in mind that the actual ranges for the absolute liquidity ratio in practice may slightly vary depending on the industry a company operates in. Second, the choice of benchmarks specifically for the absolute liquidity ratio is questionable, as the components of SSP and LTD are not clearly defined. Depending on the numerator and denominator, different liquidity ratios can be calculated—current liquidity ratio, quick liquidity ratio, absolute liquidity ratio, and others. Accordingly, the benchmarks will differ. However, when it comes to cash and cash equivalents, the absolute liquidity ratio is the most relevant.
+***Comments:***
+
+First, keep in mind that the actual ranges for the absolute liquidity ratio in practice may slightly vary depending on the industry a company operates in. Second, the choice of benchmarks specifically for the absolute liquidity ratio is questionable, as the components of SSP and LTD are not clearly defined. Depending on the numerator and denominator, different liquidity ratios can be calculated—current liquidity ratio, quick liquidity ratio, absolute liquidity ratio, and others. Accordingly, the benchmarks will differ. However, when it comes to cash and cash equivalents, the absolute liquidity ratio is the most relevant.
 
 ***3. Build Dashboard:***
 
