@@ -16,11 +16,11 @@ The project demonstrates the full development cycle of an interactive dashboard:
 
 **Data Processing** - *pandas, io, os, sqlite3, zipfile, requests, dash*  
 
-**Hosting/Deployment** - *Render*
+**Hosting/Deployment** - *Render* ( [`Dash_on_Render`](https://ccp-ltd-dash-app-dcip.onrender.com) )
 
 **Database/Storage** - *Supabase (JSON Storage)*
 
-**Raw Data Source** - from another GitHub page ([`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py)).
+**Raw Data Source** - from another GitHub page ( [`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py) ).
 
 
 ## Features/Functionality
@@ -36,14 +36,6 @@ The dashboard shows the dynamics of financial indicators such as CCP (Cash and C
 [`visualization_2`](./image/image_fig_2.ccp_ltd_ratio_chart.png) - Ratio CCP/LTD by Company, 
 
 [`visualization_3`](./image/image_fig_3.Ratio_CCP_LTD%20Heatmap.png) - Ratio CCP/LTD Heatmap by Company and Quarter.
-
-
-**Data sources**: [`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py)
-
-**Deployment**: the dashboard is available via the link: [`Dash_on_Render`](https://ccp-ltd-dash-app-dcip.onrender.com)
-
-**Storing results**: https://supabase.com/dashboard/project/jcobxvpdygzzmakkamoy
-
 
 ## Architecture and Process
 
