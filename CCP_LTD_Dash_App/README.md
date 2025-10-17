@@ -74,7 +74,7 @@ https://supabase.com/dashboard/project/jcobxvpdygzzmakkamoy
 
 1. ETL Pipeline:
 
-The data is sourced from [`Roni Hogri`](.https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py).
+The data is sourced from [`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py).
 
 A script is being used [`preparation_data.py`](./preparation_data.py) for cleaning, transformation, and formation of the Final Dataset.
 
