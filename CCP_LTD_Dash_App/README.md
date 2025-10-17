@@ -96,3 +96,9 @@ First, keep in mind that the actual ranges for the absolute liquidity ratio in p
 
 The dashboard are created using DashApp  in the [`dash_created.py`](./dash_created.py) script, which combines all visualizations into a single web interface [`image_dash`](./image/image_dash.jpeg). The code automatically detects whether to run locally (on your computer) or on Render for deployment. If deployed on Render, it uses the environment variable RENDER to set the correct host and port [`Dash_on_Render`](https://ccp-ltd-dash-app-dcip.onrender.com). Otherwise, it runs on localhost: 8051 for local testing.
 
+## Contacts of the authors of the project
+Author: [`NataLK-tech`](https://github.com/NataLK-tech)
+
+For questions or suggestions: [`Linkedn`](https://www.linkedin.com/in/natalia-kazakevych-131478348/))
+
+Data source for analysis: [`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py).
