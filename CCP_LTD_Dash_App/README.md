@@ -44,7 +44,7 @@ https://github.com/ronihogri/financial-doc-reader/tree/main/steps/step3_extract_
 
 **Deployment**: 
 
-the dashboard is available via the link: [`Dash_on_Render`](.https://ccp-ltd-dash-app-dcip.onrender.com)
+the dashboard is available via the link: [`Dash_on_Render`](https://ccp-ltd-dash-app-dcip.onrender.com)
 
 **Storing results**: 
 
@@ -92,5 +92,5 @@ Comments: First, keep in mind that the actual ranges for the absolute liquidity 
 
 ***3. Build Dashboard:***
 
-The dashboard are created using DashApp  in the [`dash_created.py`](./dash_created.py) script, which combines all visualizations into a single web interface [`image_dash`](./image_dash.jpeg). The code automatically detects whether to run locally (on your computer) or on Render for deployment. If deployed on Render, it uses the environment variable RENDER to set the correct host and port [`Dash_on_Render`](.https://ccp-ltd-dash-app-dcip.onrender.com). Otherwise, it runs on localhost: 8051 for local testing.
+The dashboard are created using DashApp  in the [`dash_created.py`](./dash_created.py) script, which combines all visualizations into a single web interface [`image_dash`](./image_dash.jpeg). The code automatically detects whether to run locally (on your computer) or on Render for deployment. If deployed on Render, it uses the environment variable RENDER to set the correct host and port [`Dash_on_Render`](https://ccp-ltd-dash-app-dcip.onrender.com). Otherwise, it runs on localhost: 8051 for local testing.
 
