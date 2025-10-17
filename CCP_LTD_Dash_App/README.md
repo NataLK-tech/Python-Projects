@@ -40,7 +40,7 @@ The dashboard shows the dynamics of financial indicators such as CCP (Cash and C
 
 **Data sources**: 
 
-https://github.com/ronihogri/financial-doc-reader/tree/main/steps/step3_extract_by_concept
+[`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py)
 
 **Deployment**: 
 
