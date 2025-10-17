@@ -20,7 +20,7 @@ The project demonstrates the full development cycle of an interactive dashboard:
 
 **Database/Storage** - *Supabase (JSON Storage)*
 
-**Raw Data Source** - https://github.com/ronihogri/financial-doc-reader/tree/main/steps/step3_extract_by_concept
+**Raw Data Source** - from [`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py).
 
 
 ## Features/Functionality
@@ -72,7 +72,7 @@ https://supabase.com/dashboard/project/jcobxvpdygzzmakkamoy
 
 ### Description of the process steps
 
-1. ETL Pipeline:
+***1. ETL Pipeline:***
 
 The data is sourced from [`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py).
 
@@ -80,7 +80,7 @@ A script is being used [`preparation_data.py`](./preparation_data.py) for cleani
 
 The final Dataset and JSON visualizations are uploaded to Supabase for quick access.
 
-2. Create Visualizations:
+***2. Create Visualizations:***
 
 The first visualization [`visualization_1`](./image_fig_1.ccp_ltd_chart.png) shows the dynamics of SSP and LTD in absolute terms. A separate slicer is created for it, where you can choose one of these indicators or both at the same time. The pros of this visualization are that we can see the trend. However, the cons include that it only helps compare companies by size. Even if we normalize the data using methods like StandardScaler, MinMaxScaler, or others, the chart becomes more readable, but the information doesn’t change — we can only compare companies by size. This information doesn’t allow us to assess how effectively a company operates in a some time period.
 
@@ -89,4 +89,6 @@ The second visualization [`visualization_2`](./image_fig_2.ccp_ltd_ratio_chart.p
 The third visualization [`visualization_3`](./image_fig_3.Ratio_CCP_LTD%20Heatmap.png) is a heatmap of the liquidity ratio. It has four main color ranges: from 0 to 0.2 (red) – critical value, from 0.2 to 0.5 (yellow) – moderate, from 0.5 to 1 (blue) – acceptable, and above 1 (green) – excellent. The intensity of each color also varies, which improves the visual perception of the results.
 
 Comments: First, keep in mind that the actual ranges for the absolute liquidity ratio in practice may slightly vary depending on the industry a company operates in. Second, the choice of benchmarks specifically for the absolute liquidity ratio is questionable, as the components of SSP and LTD are not clearly defined. Depending on the numerator and denominator, different liquidity ratios can be calculated—current liquidity ratio, quick liquidity ratio, absolute liquidity ratio, and others. Accordingly, the benchmarks will differ. However, when it comes to cash and cash equivalents, the absolute liquidity ratio is the most relevant.
+
+***3. Build Dashboard:***
 
