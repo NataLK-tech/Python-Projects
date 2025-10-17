@@ -99,6 +99,6 @@ The dashboard are created using DashApp  in the [`dash_created.py`](./dash_creat
 ## Contacts of the authors of the project
 Author: [`NataLK-tech`](https://github.com/NataLK-tech)
 
-For questions or suggestions: [`Linkedn`](https://www.linkedin.com/in/natalia-kazakevych-131478348/))
+For questions or suggestions: [`Linkedn`](https://www.linkedin.com/in/natalia-kazakevych-131478348/)
 
 Data source for analysis: [`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py).
