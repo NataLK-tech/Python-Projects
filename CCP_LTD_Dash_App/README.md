@@ -27,15 +27,15 @@ The project demonstrates the full development cycle of an interactive dashboard:
 
 **Dashboard description**:
 
-The dashboard shows the dynamics of financial indicators such as CCP (Cash and Cash Position) and LTD (Long-Term Debt) in 2019-2024: [`image_dash`](./image_dash.jpeg). The dashboard has two common slicers. The first one is by company - you can select all companies, one or several companies. The second choice of the period is that you can set one year, or any range between 2019 and 2024.
+The dashboard shows the dynamics of financial indicators such as CCP (Cash and Cash Position) and LTD (Long-Term Debt) in 2019-2024: [`image_dash`](./image/image_dash.jpeg). The dashboard has two common slicers. The first one is by company - you can select all companies, one or several companies. The second choice of the period is that you can set one year, or any range between 2019 and 2024.
 
 **Interactive visualizations**: 
 
-[`visualization_1`](./image_fig_1.ccp_ltd_chart.png) - CCP and LTD by Company,
+[`visualization_1`](./image/image_fig_1.ccp_ltd_chart.png) - CCP and LTD by Company,
 
-[`visualization_2`](./image_fig_2.ccp_ltd_ratio_chart.png) - Ratio CCP/LTD by Company, 
+[`visualization_2`](./image/image_fig_2.ccp_ltd_ratio_chart.png) - Ratio CCP/LTD by Company, 
 
-[`visualization_3`](./image_fig_3.Ratio_CCP_LTD%20Heatmap.png) - Ratio CCP/LTD Heatmap by Company and Quarter.
+[`visualization_3`](./image/image_fig_3.Ratio_CCP_LTD%20Heatmap.png) - Ratio CCP/LTD Heatmap by Company and Quarter.
 
 
 **Data sources**: 
@@ -82,11 +82,11 @@ The final Dataset and JSON visualizations are uploaded to Supabase for quick acc
 
 ***2. Create Visualizations:***
 
-The first visualization [`visualization_1`](./image_fig_1.ccp_ltd_chart.png) shows the dynamics of SSP and LTD in absolute terms. A separate slicer is created for it, where you can choose one of these indicators or both at the same time. The pros of this visualization are that we can see the trend. However, the cons include that it only helps compare companies by size. Even if we normalize the data using methods like StandardScaler, MinMaxScaler, or others, the chart becomes more readable, but the information doesn’t change — we can only compare companies by size. This information doesn’t allow us to assess how effectively a company operates in a some time period.
+The first visualization [`visualization_1`](./image/image_fig_1.ccp_ltd_chart.png) shows the dynamics of SSP and LTD in absolute terms. A separate slicer is created for it, where you can choose one of these indicators or both at the same time. The pros of this visualization are that we can see the trend. However, the cons include that it only helps compare companies by size. Even if we normalize the data using methods like StandardScaler, MinMaxScaler, or others, the chart becomes more readable, but the information doesn’t change — we can only compare companies by size. This information doesn’t allow us to assess how effectively a company operates in a some time period.
 
-The second visualization [`visualization_2`](./image_fig_2.ccp_ltd_ratio_chart.png) addresses the cons of the first one — it shows the ratio of these indicators. A liquidity ratio is calculated, which helps determine a company’s ability to cover its obligations using liquid assets. The threshold values for this ratio are 0.2, 0.5, and 1 — these are standard benchmarks for absolute liquidity, as they relate to cash and cash equivalents (based on global standards of classic financial analysis). These benchmarks allow comparing companies regardless of their capital size, focusing on how efficiently they manage liquid assets. You don’t even need to compare companies — you can look at the trend of one company’s ratio, compare it with standard values, and make a preliminary assessment of its financial management efficiency.
+The second visualization [`visualization_2`](./image/image_fig_2.ccp_ltd_ratio_chart.png) addresses the cons of the first one — it shows the ratio of these indicators. A liquidity ratio is calculated, which helps determine a company’s ability to cover its obligations using liquid assets. The threshold values for this ratio are 0.2, 0.5, and 1 — these are standard benchmarks for absolute liquidity, as they relate to cash and cash equivalents (based on global standards of classic financial analysis). These benchmarks allow comparing companies regardless of their capital size, focusing on how efficiently they manage liquid assets. You don’t even need to compare companies — you can look at the trend of one company’s ratio, compare it with standard values, and make a preliminary assessment of its financial management efficiency.
 
-The third visualization [`visualization_3`](./image_fig_3.Ratio_CCP_LTD%20Heatmap.png) is a heatmap of the liquidity ratio. It has four main color ranges: from 0 to 0.2 (red) – critical value, from 0.2 to 0.5 (yellow) – moderate, from 0.5 to 1 (blue) – acceptable, and above 1 (green) – excellent. The intensity of each color also varies, which improves the visual perception of the results.
+The third visualization [`visualization_3`](./image/image_fig_3.Ratio_CCP_LTD%20Heatmap.png) is a heatmap of the liquidity ratio. It has four main color ranges: from 0 to 0.2 (red) – critical value, from 0.2 to 0.5 (yellow) – moderate, from 0.5 to 1 (blue) – acceptable, and above 1 (green) – excellent. The intensity of each color also varies, which improves the visual perception of the results.
 
 ***Comments:***
 
@@ -94,5 +94,5 @@ First, keep in mind that the actual ranges for the absolute liquidity ratio in p
 
 ***3. Build Dashboard:***
 
-The dashboard are created using DashApp  in the [`dash_created.py`](./dash_created.py) script, which combines all visualizations into a single web interface [`image_dash`](./image_dash.jpeg). The code automatically detects whether to run locally (on your computer) or on Render for deployment. If deployed on Render, it uses the environment variable RENDER to set the correct host and port [`Dash_on_Render`](https://ccp-ltd-dash-app-dcip.onrender.com). Otherwise, it runs on localhost: 8051 for local testing.
+The dashboard are created using DashApp  in the [`dash_created.py`](./dash_created.py) script, which combines all visualizations into a single web interface [`image_dash`](./image/image_dash.jpeg). The code automatically detects whether to run locally (on your computer) or on Render for deployment. If deployed on Render, it uses the environment variable RENDER to set the correct host and port [`Dash_on_Render`](https://ccp-ltd-dash-app-dcip.onrender.com). Otherwise, it runs on localhost: 8051 for local testing.
 
