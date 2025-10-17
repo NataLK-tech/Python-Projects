@@ -38,17 +38,11 @@ The dashboard shows the dynamics of financial indicators such as CCP (Cash and C
 [`visualization_3`](./image/image_fig_3.Ratio_CCP_LTD%20Heatmap.png) - Ratio CCP/LTD Heatmap by Company and Quarter.
 
 
-**Data sources**: 
+**Data sources**: [`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py)
 
-[`Roni Hogri`](https://github.com/ronihogri/financial-doc-reader/blob/main/steps/step3_extract_by_concept/SEC_filing_reader_step3.py)
+**Deployment**: the dashboard is available via the link: [`Dash_on_Render`](https://ccp-ltd-dash-app-dcip.onrender.com)
 
-**Deployment**: 
-
-the dashboard is available via the link: [`Dash_on_Render`](https://ccp-ltd-dash-app-dcip.onrender.com)
-
-**Storing results**: 
-
-https://supabase.com/dashboard/project/jcobxvpdygzzmakkamoy
+**Storing results**: https://supabase.com/dashboard/project/jcobxvpdygzzmakkamoy
 
 
 ## Architecture and Process
