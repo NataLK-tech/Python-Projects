@@ -80,7 +80,7 @@ The third visualization [`visualization_3`](./image/image_fig_3.Ratio_CCP_LTD%20
 
 **First**, keep in mind that the actual ranges for the absolute liquidity ratio in practice may slightly vary depending on the industry a company operates in. 
 
-**Second**, the choice of benchmarks specifically for the absolute liquidity ratio is questionable, as the components of SSP and LTD are not clearly defined. Depending on the numerator and denominator, different liquidity ratios can be calculated—current liquidity ratio, quick liquidity ratio, absolute liquidity ratio, and others. Accordingly, the benchmarks will differ. However, when it comes to cash and cash equivalents, the absolute liquidity ratio is the most relevant.
+**Second**, the choice of benchmarks specifically for the absolute liquidity ratio is questionable, as the components of CCP and LTD are not clearly defined. Depending on the numerator and denominator, different liquidity ratios can be calculated—current liquidity ratio, quick liquidity ratio, absolute liquidity ratio, and others. Accordingly, the benchmarks will differ. However, when it comes to cash and cash equivalents, the absolute liquidity ratio is the most relevant.
 
 ***3. Build Dashboard:***
 
