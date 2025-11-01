@@ -102,7 +102,7 @@ It presents a heatmap of the liquidity ratio, offering an intuitive overview of 
 The dashboard are created using DashApp  in the [`dash_created.py↗️`](./dash_created.py) script, which combines all visualizations into a single web interface [`image_dash↗️`](./image/image_dash.jpeg). The code automatically detects whether to run locally (on your computer) or on Render for deployment. If deployed on Render, it uses the environment variable RENDER to set the correct host and port [`go to Dash_on_Render↗️`](https://ccp-ltd-dash-app-dcip.onrender.com). Otherwise, it runs on localhost: 8051 for local testing.
 
 ## Deployment
-Platform: Deployed on Render.
+Platform: Render.
 
 Link: [`go to Dash_on_Render↗️`](https://ccp-ltd-dash-app-dcip.onrender.com)
 
