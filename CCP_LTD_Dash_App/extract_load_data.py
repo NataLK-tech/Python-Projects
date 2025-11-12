@@ -63,8 +63,9 @@ def upload_sqlite_to_supabase(sqlite_path, supabase: Client):
 
 
 if __name__ == "__main__":    
-    supabase = create_client(SUPABASE_URL, SUPABASE_KEY_service_role)    
+    supabase = create_client(SUPABASE_URL, SUPABASE_KEY)    
     url = "https://raw.githubusercontent.com/ronihogri/financial-doc-reader/main/steps/step3_extract_by_concept/results.zip"
 
     sqlite_file = download_and_extract_zip(url, output_dir)  
     upload_sqlite_to_supabase(sqlite_file, supabase)
+
