@@ -4,8 +4,6 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 
-
-
 def create_fig_3(df):
     pivot_df = df.pivot(index='Symbol', columns='NormalizedQuarter', values='Ratio_CCP_LTD')
 
@@ -47,7 +45,13 @@ def create_fig_3(df):
         title_y=0.95,
         title_font=dict(family="Georgia", size=20, color="black", weight="bold"),
         xaxis=dict(
-            title="Quarter",
+            #title="Quarter",
+            title="Quarter<br><br>"
+                  "<span style='font-size:12px; color:gray; font-weight:100;'>"
+                  "<i>Change in the level of companies financial stability by quarters.<br>"
+                  "The higher the ratio, the greater the companies financial stability: <br> "
+                  "green — high, blue — acceptable, yellow — optimal, red — critical.<i>"
+                    "</span>",
             title_font=dict(size=14, color="black", weight="bold"),
             tickangle=45,
             showgrid=False
@@ -58,10 +62,13 @@ def create_fig_3(df):
             showgrid=False
         ),
         plot_bgcolor="white",
-        width=650,
-        height=400
+        width=600,
+        height=500
     )
 
+
+
     return fig
+
 
 
