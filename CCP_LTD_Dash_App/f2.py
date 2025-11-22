@@ -1,7 +1,6 @@
 #from preparation_data import result_df
 
 import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
 
 
@@ -21,7 +20,7 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
     padding = (max_val - min_val) * 0.1 if max_val > min_val else 0.1
     y_range = [0, max_val + padding]
 
-    fig_2 = go.Figure(layout=dict(width=650, height=400))
+    fig_2 = go.Figure(layout=dict(width=600, height=500))
 
     x_min = unique_quarters.iloc[0]
     x_max = unique_quarters.iloc[-1]
@@ -47,25 +46,25 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
 
     companies = filtered_df['Symbol'].unique()
 
-    symbol_colors = {
-        'AAPL': '#1f77b4',
-        'AMGN': '#ff7f0e',
-        'AMZN': '#2ca02c',
-        'BBWI': '#d62728',
-        'BMY': '#9467bd',
-        'CNC': '#8c564b',
-        'COP': '#e377c2',
-        'GILD': '#7f7f7f',
-        'HSIC': '#bcbd22',
-        'KO': '#17becf',
-        'TMO': '#aec7e8',
-        'UPS': '#ffbb78'
-    }
-
     for i, company in enumerate(companies):
         company_data = filtered_df[filtered_df['Symbol'] == company]
         if company_data.empty:
             continue
+
+        symbol_colors = {
+            'AAPL': '#1f77b4',
+            'AMGN': '#ff7f0e',
+            'AMZN': '#2ca02c',
+            'BBWI': '#d62728',
+            'BMY': '#9467bd',
+            'CNC': '#8c564b',
+            'COP': '#e377c2',
+            'GILD': '#7f7f7f',
+            'HSIC': '#bcbd22',
+            'KO': '#17becf',
+            'TMO': '#aec7e8',
+            'UPS': '#ffbb78'
+        }
 
         company_data = company_data.sort_values('NormalizedQuarter')
         color = symbol_colors.get(company, '#000000')
@@ -102,7 +101,13 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
         title_y=0.95,
         title_font=dict(family="Georgia", size=20, color="black", weight="bold"),
         xaxis=dict(
-            title=dict(text="Quarter", font=dict(size=14, color="black", weight="bold")),
+            title=dict(text="Quarter<br><br>"
+                            "<span style='font-size:12px; color:gray; font-weight:100;'>"
+                            "<i>The dynamics of the ratio between CCP and LTD.<br>"
+                            "Values are distributed across ranges: below 0.2 — red,<br> "
+                            "from 0.2 to 0.5 — yellow, from 0.5 to 1 — blue, above 1 — green.<i>"
+                            "</span>",
+                       font=dict(size=14, color="black", weight="bold")),
             tickangle=45,
             tickmode='array',
             tickvals=unique_quarters,
@@ -127,5 +132,7 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
     )
 
     return fig_2
+
+
 
 
