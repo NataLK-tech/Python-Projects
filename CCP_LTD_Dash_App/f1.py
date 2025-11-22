@@ -20,7 +20,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
     y_range = [max(0, min_val - padding), max_val + padding]
 
     fig = sp.make_subplots(specs=[[{"secondary_y": True}]],
-                          figure=go.Figure(layout=dict(width=1300, height=400)))
+                          figure=go.Figure(layout=dict(width=1200, height=500)))
 
     companies = df['Symbol'].unique()
 
@@ -100,19 +100,19 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
             dict(
                 active=2,
                 buttons=list([
-                    dict(label="CCP",
+                    dict(label="━━ 𝐂𝐂𝐏",
                          method="update",
                          args=[{"visible": [True] * len(companies) + [False] * len(companies)},
                                {"yaxis.visible": True, "yaxis2.visible": False,
                                 "yaxis.title": "CCP, $ M", "yaxis2.title": "",
                                 "yaxis.range": y_range, "yaxis2.range": y_range}]),
-                    dict(label="LTD",
+                    dict(label="- - -  𝐋𝐓𝐃",
                          method="update",
                          args=[{"visible": [False] * len(companies) + [True] * len(companies)},
                                {"yaxis.visible": False, "yaxis2.visible": True,
                                 "yaxis.title": "", "yaxis2.title": "LTD, $ M",
                                 "yaxis.range": y_range, "yaxis2.range": y_range}]),
-                    dict(label="Both",
+                    dict(label="─── 𝐂𝐂𝐏, - - -  𝐋𝐓𝐃",
                          method="update",
                          args=[{"visible": [True] * (2 * len(companies))},
                                {"yaxis.visible": True, "yaxis2.visible": True,
@@ -131,12 +131,25 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
     )
 
     fig.update_layout(
-        title="CCP and LTD by Company",
-        title_x=0.5,
-        title_y=1,
-        title_font=dict(family="Georgia", size=20, color="black", weight="bold"),
+        title={
+            'text': "<span style='font-size:18px; color:black; font-weight:200;'>"
+                    "<i>The dynamics of Cash and Cash-equivalent Position (CCP) and Long-Term Debt (LTD) for several companies <br>over multiple years. "
+                    "You can quickly identify trends and assess the financial stability of these companies.</i>"
+                    "</span><br><br>"
+                    "<span style='font-size:20px; color:black; font-weight:bold;'>CCP and LTD by Company</span>",
+            'x': 0.5,
+            'xanchor': 'center',
+            'y': 0.95,
+            'yanchor': 'top'
+        },
+        margin=dict(t=150),
+
         xaxis=dict(
-            title=dict(text="Quarter", font=dict(size=14, color="black", weight="bold")),
+            title=dict(text="Quarter<br><br>"
+                            "<span style='font-size:12px; color:gray; font-weight:100;'>"
+                            "<i>Changes over time in the absolute values of CCP and LTD allow you to compare the scale and trends of different companies’ activities.<i>"
+                            "</span>",
+                       font=dict(size=14, color="black", weight="bold")),
             tickangle=45,
             tickmode='array',
             tickvals=unique_quarters,
@@ -180,6 +193,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
     )
 
     return fig
+
 
 
 
