@@ -3,12 +3,8 @@
 from supabase import create_client, Client
 import pandas as pd
 
-# for GitHub:
-# SUPABASE_URL = os.getenv("SUPABASE_URL")
-# SUPABASE_KEY = os.getenv("SUPABASE_&&&&&")
-
-SUPABASE_URL = "https://jcobxvpdygzzmakkamoy.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impjb2J4dnBkeWd6em1ha2thbW95Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAwMTA5ODQsImV4cCI6MjA3NTU4Njk4NH0.ny-fRFJ8b4QFPe7KLBpOBVX5D5_vWjVqJCuiI94ucVk"
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_PUBLIC_KEY")
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
@@ -46,3 +42,4 @@ result_df['NormalizedQuarter'] = pd.to_datetime(result_df['NormalizedQuarter'], 
 result_df['Ratio_CCP_LTD'] = round(result_df['CCP'] / result_df['LTD'], 4)
 
 # print(result_df.head())
+
