@@ -4,7 +4,7 @@ from dash import Dash, dcc, html, Input, Output
 import plotly.graph_objects as go
 import os
 
-from preparation_data import result_df
+from preparation_data_2 import result_df
 from f1 import create_fig_1
 from f2 import create_fig_2
 from f3 import create_fig_3
@@ -57,21 +57,21 @@ app.layout = html.Div([
         'alignItems': 'center',
         'justifyContent': 'space-between',
         'padding': '20px',
-        'maxWidth': '1300px',
+        'maxWidth': '1200px',
         'margin': '0 auto'
     }),
 
     dcc.Graph(id='graph-1', style={'margin': '20px'}),
 
     html.Div([
-        dcc.Graph(id='graph-2', style={'marginRight': '10px', 'width': '645px'}),
-        dcc.Graph(id='graph-3', style={'marginLeft': '10px', 'width': '645px'})
+        dcc.Graph(id='graph-2', style={'marginRight': '10px', 'width': '600px'}),
+        dcc.Graph(id='graph-3', style={'marginLeft': '10px', 'width': '600px'})
     ], style={
         'display': 'flex',
         'flexDirection': 'row',
         'justifyContent': 'center',
         #'margin': '0 20px 20px 20px',
-        'maxWidth': '1300px',
+        'maxWidth': '1200px',
         'margin': '0 auto'
     })
 ])
@@ -135,4 +135,5 @@ if __name__ == '__main__':
         app.run(debug=True, host='0.0.0.0', port=port)
     else:
         app.run(debug=True, port=8051)
+
 
