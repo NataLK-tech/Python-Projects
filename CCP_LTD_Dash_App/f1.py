@@ -1,7 +1,6 @@
 #from preparation_data import result_df
 
 import pandas as pd
-import plotly.express as px
 import plotly.graph_objects as go
 import plotly.subplots as sp
 
@@ -62,7 +61,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
                 ),
                 hovertext=hovertext_ccp,
                 hovertemplate="%{hovertext}<extra></extra>",
-                showlegend=True
+                showlegend=False
             ),
             secondary_y=False
         )
@@ -90,7 +89,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
                 ),
                 hovertext=hovertext_ltd,
                 hovertemplate="%{hovertext}<extra></extra>",
-                showlegend=True
+                showlegend=False
             ),
             secondary_y=True
         )
@@ -99,6 +98,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
         updatemenus=[
             dict(
                 active=2,
+                font=dict(size=14, family="Arial Black", color="black"),
                 buttons=list([
                     dict(label="━━ 𝐂𝐂𝐏",
                          method="update",
@@ -121,11 +121,11 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
                                 "yaxis.range": y_range, "yaxis2.range": y_range}])
                 ]),
                 direction="down",
-                pad={"r": 10, "t": 10},
+                #pad={"r": 10, "t": 10},
                 showactive=True,
-                x=0.1,
+                x=0.05,
                 xanchor="left",
-                y=1.15,
+                y=1,
                 yanchor="top"
             )
         ]
@@ -192,5 +192,22 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
         zerolinewidth=2,
         secondary_y=True
     )
+    for company in companies:
+        color = symbol_colors.get(company, '#000000')
+        fig.add_trace(
+            go.Scatter(
+                x=[None],
+                y=[None],
+                mode='markers',
+                marker=dict(
+                    color=color,
+                    size=12,
+                    symbol='square'
+                ),
+                name=company,
+                showlegend=True
+            )
+        )
 
     return fig
+
