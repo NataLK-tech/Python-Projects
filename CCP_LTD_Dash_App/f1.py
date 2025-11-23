@@ -102,19 +102,20 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
                 buttons=list([
                     dict(label="━━ 𝐂𝐂𝐏",
                          method="update",
-                         args=[{"visible": [True] * len(companies) + [False] * len(companies)},
-                               {"yaxis.visible": True, "yaxis2.visible": False,
-                                "yaxis.title": "CCP, $ M", "yaxis2.title": "",
-                                "yaxis.range": y_range, "yaxis2.range": y_range}]),
+                         args=[
+                             {"visible": [True] * len(companies) + [False] * len(companies) + [True] * len(companies)},
+                             {"yaxis.visible": True, "yaxis2.visible": False,
+                              "yaxis.title": "CCP, $ M", "yaxis2.title": "",
+                              "yaxis.range": y_range, "yaxis2.range": y_range}]),
                     dict(label="- - -  𝐋𝐓𝐃",
                          method="update",
-                         args=[{"visible": [False] * len(companies) + [True] * len(companies)},
-                               {"yaxis.visible": False, "yaxis2.visible": True,
-                                "yaxis.title": "", "yaxis2.title": "LTD, $ M",
-                                "yaxis.range": y_range, "yaxis2.range": y_range}]),
+                         args=[{"visible": [False] * len(companies) + [True] * len(companies) + [True] * len(companies)},
+                             {"yaxis.visible": False, "yaxis2.visible": True,
+                              "yaxis.title": "", "yaxis2.title": "LTD, $ M",
+                              "yaxis.range": y_range, "yaxis2.range": y_range}]),
                     dict(label="─── 𝐂𝐂𝐏, - - -  𝐋𝐓𝐃",
                          method="update",
-                         args=[{"visible": [True] * (2 * len(companies))},
+                         args=[{"visible": [True] * (2 * len(companies)) + [True] * len(companies)},
                                {"yaxis.visible": True, "yaxis2.visible": True,
                                 "yaxis.title": "CCP, $ M", "yaxis2.title": "LTD, $ M",
                                 "yaxis.range": y_range, "yaxis2.range": y_range}])
@@ -193,12 +194,3 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
     )
 
     return fig
-
-
-
-
-
-
-
-
-
