@@ -125,7 +125,7 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
                 showactive=True,
                 x=0.05,
                 xanchor="left",
-                y=1,
+                y=1.15,
                 yanchor="top"
             )
         ]
@@ -210,4 +210,5 @@ def create_fig_1(df: pd.DataFrame) -> go.Figure:
         )
 
     return fig
+
 
