@@ -1,7 +1,9 @@
 # pip install supabase
 
-from supabase import create_client, Client
+import os
+
 import pandas as pd
+from supabase import create_client, Client
 
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_PUBLIC_KEY")
@@ -42,4 +44,5 @@ result_df['NormalizedQuarter'] = pd.to_datetime(result_df['NormalizedQuarter'], 
 result_df['Ratio_CCP_LTD'] = round(result_df['CCP'] / result_df['LTD'], 4)
 
 # print(result_df.head())
+
 
