@@ -20,7 +20,7 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
     padding = (max_val - min_val) * 0.1 if max_val > min_val else 0.1
     y_range = [0, max_val + padding]
 
-    fig_2 = go.Figure(layout=dict(width=600, height=500))
+    fig_2 = go.Figure(layout=dict(width=650, height=500))
 
     x_min = unique_quarters.iloc[0]
     x_max = unique_quarters.iloc[-1]
@@ -132,6 +132,7 @@ def create_fig_2(filtered_df: pd.DataFrame) -> go.Figure:
     )
 
     return fig_2
+
 
 
 
