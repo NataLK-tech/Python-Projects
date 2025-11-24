@@ -62,13 +62,14 @@ def create_fig_3(df):
             showgrid=False
         ),
         plot_bgcolor="white",
-        width=600,
+        width=650,
         height=500
     )
 
 
 
     return fig
+
 
 
 
