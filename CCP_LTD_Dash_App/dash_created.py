@@ -57,7 +57,7 @@ app.layout = html.Div([
         'alignItems': 'center',
         'justifyContent': 'space-between',
         'padding': '20px',
-        'maxWidth': '1200px',
+        'maxWidth': '1300px',
         'margin': '0 auto'
     }),
 
@@ -71,7 +71,7 @@ app.layout = html.Div([
         'flexDirection': 'row',
         'justifyContent': 'center',
         #'margin': '0 20px 20px 20px',
-        'maxWidth': '1200px',
+        'maxWidth': '1300px',
         'margin': '0 auto'
     })
 ])
@@ -135,5 +135,6 @@ if __name__ == '__main__':
         app.run(debug=True, host='0.0.0.0', port=port)
     else:
         app.run(debug=True, port=8051)
+
 
 
