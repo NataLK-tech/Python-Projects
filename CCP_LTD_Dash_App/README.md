@@ -1,6 +1,6 @@
 # Financial Analytics Dashboard using Plotly & Dash
 
-Natalia Kazakevych, Oktober 2025
+Natalia Kazakevych, November 2025
 
 Keywords: Python, Pandas, Plotly, requests, Dash App, Render, Supabase.
 
